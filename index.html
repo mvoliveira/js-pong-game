@@ -32,7 +32,7 @@
     dirx: -1,
     diry: 1,
     mod: 0,
-    speed: 1
+    speed: 2
   };
 
   var esquerda = {
@@ -118,6 +118,11 @@
       ++direita.score;
     }
 
+    reposicionar();
+
+  };
+
+  function reposicionar() {
     esquerda.y = canvas.height / 2 - esquerda.altura / 2;
     direita. y = esquerda.y;
     bola.y = canvas.height /2 - bola.altura / 2;

@@ -61,6 +61,10 @@
     ctx.fillRect(esquerda.x, esquerda.y, esquerda.largura, esquerda.altura);
     ctx.fillRect(direita.x, direita.y, direita.largura, direita.altura);
     ctx.fillRect(bola.x, bola.y, bola.largura, bola.altura);
+
+    ctx.font = "20px Arial";
+    ctx.fillText("Player 1: " + esquerda.score, 50, 20);
+    ctx.fillText("Player 2: " + direita.score, canvas.width - 140, 20);
   }
 
 desenha();

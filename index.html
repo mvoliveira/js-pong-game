@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>JS Pong Game</title>
-    <style>
-        canvas{
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          background-color: black;
-          margin-top: -300px;
-          margin-left: -300px;
+<head>
+  <meta charset="utf-8">
+  <title>JS Pong Game</title>
+  <style>
+  canvas{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: black;
+    margin-top: -300px;
+    margin-left: -300px;
 
 
-        }
-    </style>
-  </head>
-  <body>
-    <canvas height="600" width="600" id="myCanvas">Your browser doesn't support this element</canvas>
-    <script>
-      var canvas = document.getElementById("myCanvas");
-      var ctx = canvas.getContext("2d");
+  }
+  </style>
+</head>
+<body>
+  <canvas height="600" width="600" id="myCanvas">Your browser doesn't support this element</canvas>
+  <script>
+  var canvas = document.getElementById("myCanvas");
+  var ctx = canvas.getContext("2d");
 
-      ctx.fillStyle = "red";
-      ctx.fillRect(0, 0, 50, 50);
+  ctx.fillStyle = "red";
+  ctx.fillRect(0, 0, 50, 50);
+
+  var teclas = {};
+
+  var bola = {x: canvas.width / 2 - 15,
+    y: canvas.height / 2 - 15;
+    altura: 30,
+    largura: 30,
+    dirx: -1,
+    diry: 1,
+    mod: 0,
+    speed: 50
+  };
 
 
-    </script>
-  </body>
+
+  </script>
+</body>
 </html>

@@ -22,8 +22,6 @@
   var canvas = document.getElementById("myCanvas");
   var ctx = canvas.getContext("2d");
 
-  ctx.fillStyle = "red";
-  ctx.fillRect(0, 0, 50, 50);
 
   var teclas = {};
 
@@ -76,6 +74,14 @@
     direita.y += direita.speed;
   }
 
+
+
+
+
+
+
+
+
   function desenha() {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -90,9 +96,9 @@
     ctx.fillText("Player 1: " + esquerda.score, 50, 20);
     ctx.fillText("Player 2: " + direita.score, canvas.width - 140, 20);
 
+    setTimeout(desenha, 15);
   };
-  setInterval(desenha, 15);
-
+  desenha();
 
   </script>
 </body>

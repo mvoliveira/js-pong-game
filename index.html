@@ -96,48 +96,51 @@
     bola.y += (bola.speed + bola.mod) * bola.diry;
 
     if(bola.x < esquerda.x + esquerda.largura - 15)
-    novoJogo("player 2");
+    novoJogo("player 1");
 
     else if(bola.x + bola.largura > direita.x + 15)
-    novoJogo("player 1");
+    novoJogo("player 2");
   };
 
-  function novoJogo(winner) {
-    if(winner == "player 2")
-    ++esquerda.score;
-    else
-    ++direita.score;
 
-    esquerda.y = canvas.height / 2 - esquerda.altura / 2;
-    direita. y = esquerda.y;
-    bola.y = canvas.height /2 - bola.altura / 2;
-    bola.x = canvas.width / 2 - bola.largura /2
-    bola.mod = 0;
+function novoJogo(winner) {
+  if(winner == "player 2")
+  ++esquerda.score;
+  else
+  ++direita.score;
 
-
-  };
-
-  function desenha() {
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    moveBloco();
-    moveBola();
-
-    ctx.fillStyle = "white";
-    ctx.fillRect(esquerda.x, esquerda.y, esquerda.largura, esquerda.altura);
-    ctx.fillRect(direita.x, direita.y, direita.largura, direita.altura);
-    ctx.fillRect(bola.x, bola.y, bola.largura, bola.altura);
-
-    ctx.font = "20px Arial";
-    ctx.fillText("Player 1: " + esquerda.score, 50, 20);
-    ctx.fillText("Player 2: " + direita.score, canvas.width - 140, 20);
-
-  };
-
-  setInterval(desenha, 15);
+  esquerda.y = canvas.height / 2 - esquerda.altura / 2;
+  direita. y = esquerda.y;
+  bola.y = canvas.height /2 - bola.altura / 2;
+  bola.x = canvas.width / 2 - bola.largura /2
+  bola.mod = 0;
 
 
+};
 
-  </script>
+function desenha() {
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  moveBloco();
+  moveBola();
+
+  ctx.fillStyle = "white";
+  ctx.fillRect(esquerda.x, esquerda.y, esquerda.largura, esquerda.altura);
+  ctx.fillRect(direita.x, direita.y, direita.largura, direita.altura);
+  ctx.fillRect(bola.x, bola.y, bola.largura, bola.altura);
+
+  ctx.font = "20px Arial";
+  ctx.fillText("Player 1: " + esquerda.score, 50, 20);
+  ctx.fillText("Player 2: " + direita.score, canvas.width - 140, 20);
+
+};
+
+setInterval(desenha, 15);
+
+
+
+</script>
 </body>
 </html>
+
+<!-- ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCjVDiSrDWMdH3ykdU2qQXcTewCEkDn6Zo6v1eRXR4xCUyeDyWkkzNPhiPQbzP9tLiJXN7tNcCQQ2RAs0JsEglA0TkBSFwSFbyNcrfBgnBiohKpwme4A7D2a/KfaMdLhu0yySZeXN4cpKW/0Hlrfrhv1cOTkP3nVBkfPhNRsyDOpf8JraW9KrKNUzkSMUK+9R4+XyFyDnCE5cUWd9kO2GieiG2KH6LATr/317W/xYt9OJ/gF6dt1iZp1UUWDHRylicVe14hFE+U/B4Q9v1Qop9GbWrd3Dwr09oB4iu4qucbLGXaICiVM63qtDjbseDBFHr2/T/7QGgDDBpgooCfTlcv matheus@matheus -->
